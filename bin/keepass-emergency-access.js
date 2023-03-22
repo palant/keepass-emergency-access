@@ -2,6 +2,7 @@
 
 "use strict";
 
+import inquirer from "inquirer";
 import yargs from "yargs/yargs";
 import {hideBin} from "yargs/helpers";
 
@@ -48,9 +49,22 @@ function parseArgs()
     .parse();
 }
 
+async function queryPassword()
+{
+  let {password} = await inquirer.prompt([{
+    type: "password",
+    name: "password",
+    message: "Please enter the database password:"
+  }]);
+  return password;
+}
+
 async function run()
 {
   let args = parseArgs();
+  if (!args.password)
+    args.password = queryPassword;
+
   let [credentials, database] = await readDatabase(args);
   let compositeKey = await getDatabaseKey(credentials, database);
   await writeOutput(args);
