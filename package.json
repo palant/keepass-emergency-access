@@ -1,0 +1,21 @@
+{
+  "title": "KeePass emergency access",
+  "name": "keepass-emergency-access",
+  "description": "Produces a web page and a set of keys that can be used to gain access to a KeePass database (KDBX4) in case of emergency.",
+  "author": "Wladimir Palant",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/palant/keepass-emergency-access.git"
+  },
+  "version": "0.1.0",
+  "main": "index.js",
+  "type": "module",
+  "dependencies": {
+    "argon2": "^0.30.3",
+    "argon2-browser": "^1.18.0",
+    "inquirer": "^9.1.5",
+    "kdbxweb": "^2.1.1",
+    "yargs": "^17.7.1"
+  }
+}
