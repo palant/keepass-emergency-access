@@ -53,7 +53,7 @@ SBEVG6L-J5N4MTB
 SS2W67A-4NQYVGH
 ```
 
-Each key encodes 256 bit of binary data, encoded with [Base32](https://en.wikipedia.org/wiki/Base32) to make entering them manually easier. Together, the keys encode the “composite key” which is a hashed version of your database password and key file. In addition, each key contains a CRC16 checksum allowing to detect incorrectly entered keys.
+Each key encodes 256 bits of binary data, encoded with [Base32](https://en.wikipedia.org/wiki/Base32) to make entering them manually easier. Together, the keys encode the “composite key” which is a hashed version of your database password and key file. In addition, each key contains a CRC16 checksum allowing to detect incorrectly entered keys.
 
 Security considerations
 -----------------------
