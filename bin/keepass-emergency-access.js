@@ -6,7 +6,7 @@ import inquirer from "inquirer";
 import yargs from "yargs/yargs";
 import {hideBin} from "yargs/helpers";
 
-import {readDatabase, getDatabaseKey, writeOutput, printKeys} from "../lib/index.js";
+import {readDatabase, getDatabaseKey, writeOutput, generateKeys} from "../lib/index.js";
 
 function parseArgs()
 {
@@ -67,8 +67,17 @@ async function run()
 
   let [credentials, database] = await readDatabase(args);
   let compositeKey = await getDatabaseKey(credentials, database);
+
   await writeOutput(args);
-  printKeys(args, compositeKey);
+  console.log(`Emergency access page written to ${args.output_file}`);
+  console.log();
+
+  for (let [index, key] of generateKeys(args, compositeKey))
+  {
+    console.log(`Key ${index}`);
+    console.log(key);
+    console.log();
+  }
   console.log("Access to your passwords can only be gained with all of these keys, so keep them separate!");
 }
 
