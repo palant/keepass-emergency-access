@@ -49,12 +49,15 @@ function parseArgs()
     .parse();
 }
 
-async function queryPassword()
+async function queryPassword(firstAttempt)
 {
   let {password} = await inquirer.prompt([{
     type: "password",
     name: "password",
-    message: "Please enter the database password:"
+    message: (firstAttempt
+      ? "Please enter the database password:"
+      : "This doesn't seem to be the correct database password, please try again:"
+    )
   }]);
   return password;
 }

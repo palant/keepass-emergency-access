@@ -20,7 +20,8 @@
     "lib"
   ],
   "scripts": {
-    "eslint": "eslint bin lib"
+    "eslint": "eslint assets bin lib",
+    "test": "npm run eslint"
   },
   "dependencies": {
     "argon2": "^0.30.3",

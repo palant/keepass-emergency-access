@@ -1,0 +1,13 @@
+{
+  "env": {
+    "browser": true,
+    "node": false
+  },
+  "globals": {
+    "kdbxweb": "readonly",
+    "argon2": "readonly",
+    "crc16": "readonly",
+    "base32Alphabet": "readonly",
+    "db_file": "readonly"
+  }
+}
